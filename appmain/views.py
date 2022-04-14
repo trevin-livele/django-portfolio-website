@@ -1,11 +1,17 @@
 from django.shortcuts import render
+from categories.models import Category
 
 # Create your views here.
 def services(request):
     return render(request, 'appmain/services.html')
 
 def portfolio(request):
-    return render(request, 'appmain/portfolio.html')
+    category = Category.objects.all()
+
+    context = {
+        'category': category,
+    }
+    return render(request, 'appmain/portfolio.html', context)
 
 
 

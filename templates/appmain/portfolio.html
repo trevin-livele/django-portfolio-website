@@ -31,13 +31,18 @@
 			<h2>My Latest Featured Projects</h2>
 			<p>Projects i have worked on</p>
 		</div>
+
+
 		<div class="isotope_fillter">
 			<ul class="gallery_filter">
-				<li class="active"><a href="#">All</a></li>
-				<li><a href="#">Vector</a></li>
-			
+				{% for category in category %}
+				<li class="active"><a href="#">{{ category }}</a></li>
+				{% endfor %}
+
 			</ul>
+
 		</div>
+
 	</div>
 	<div class="container">
 		<div class="gallery_f_inner row imageGallery1">
@@ -115,7 +120,8 @@
 					</div>
 					<div class="g_item_text">
 						<h4>3D Logo Design</h4>
-						<p>Client Project</p>
+
+                        <a href="#"><p>Client Project</p></a>
 					</div>
 				</div>
 			</div>

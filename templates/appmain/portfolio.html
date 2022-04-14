@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
-{% load static %}  
+{% load static %}
 {% block content %}
 
 
-        
-        <!--================Home Banner Area =================-->
-        <section class="banner_area">
-            <div class="box_1620">
-				<div class="banner_inner d-flex align-items-center">
-					<div class="container">
-						<div class="banner_content text-center">
-							<h2>Portfolio</h2>
-							<div class="page_link">
-								<a href="index.html">Home</a>
-								<a href="portfolio.html">Portfolio</a>
-							</div>
-						</div>
+
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+	<div class="box_1620">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+				<div class="banner_content text-center">
+					<h2>Portfolio</h2>
+					<div class="page_link">
+						<a href="index.html">Home</a>
+						<a href="portfolio.html">Portfolio</a>
 					</div>
 				</div>
-            </div>
-        </section>
-        <!--================End Home Banner Area =================-->
-        
-        
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End Home Banner Area =================-->
+
+
 
 <!--================Home Gallery Area =================-->
 <section class="home_gallery_area p_120">
@@ -46,85 +46,35 @@
 	</div>
 	<div class="container">
 		<div class="gallery_f_inner row imageGallery1">
+
+
+			{% for project in projects %}
 			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
 				<div class="h_gallery_item">
+					
 					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-1.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-1.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
+						<img class="img-fluid" src="{{ project.images.url }}" alt="">
+						<a class="light" href="{{ project.images.url}}"><img
+								src="{{ project.images.url }}" alt=""></a>
 					</div>
 					<div class="g_item_text">
-						<h4>3D Helmet Design</h4>
-						<p>Client Project</p>
+						<h4>NAME: {{ project.project_name }}</h4>
+						<p>DESCRIPTION: {{ project.description }}</p>
+						<a href="{{ project.github_link }}">view in github</a>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-				<div class="h_gallery_item">
-					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-2.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-2.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-					</div>
-					<div class="g_item_text">
-						<h4>2D Vinyl Design</h4>
-						<p>Client Project</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
-				<div class="h_gallery_item">
-					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-3.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-3.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-					</div>
-					<div class="g_item_text">
-						<h4>Creative Poster Design</h4>
-						<p>Client Project</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
-				<div class="h_gallery_item">
-					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-4.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-4.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-					</div>
-					<div class="g_item_text">
-						<h4>Embosed Logo Design</h4>
-						<p>Client Project</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
-				<div class="h_gallery_item">
-					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-5.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-5.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-					</div>
-					<div class="g_item_text">
-						<h4>3D Disposable Bottle</h4>
-						<p>Client Project</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 brand creative">
-				<div class="h_gallery_item">
-					<div class="g_img_item">
-						<img class="img-fluid" src="{% static 'img/gallery/project-6.jpg' %}" alt="">
-						<a class="light" href="{% static 'img/gallery/project-6.jpg' %}"><img
-								src="{% static 'img/gallery/icon.png' %}" alt=""></a>
-					</div>
-					<div class="g_item_text">
-						<h4>3D Logo Design</h4>
 
-                        <a href="#"><p>Client Project</p></a>
-					</div>
 				</div>
+
 			</div>
+			{% endfor %}
+
+
+
+
+
+
+
+
 		</div>
 		<div class="more_btn">
 			<a class="main_btn" href="{% url 'portfolio' %}">Load More Items</a>

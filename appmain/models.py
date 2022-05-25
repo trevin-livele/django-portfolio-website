@@ -18,3 +18,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.project_name
+
+
+class MailingList(models.Model):
+    email = models.CharField(max_length=250, blank=False)
+    isSubscribed = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.email

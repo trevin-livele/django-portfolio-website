@@ -26,7 +26,8 @@
                     <div id="mc_embed_signup">
 
 
-                        <form action="#" method="" class="subscribe_form relative">
+                        <form action="#" method="POST" class="subscribe_form relative">
+                            {% csrf_token %}
                             <div class="input-group d-flex flex-row">
                                 <input name="EMAIL" placeholder="Enter email address" required="" type="email">
                                 <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>

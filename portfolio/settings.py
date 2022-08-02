@@ -111,6 +111,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+cloudinary.config( 
+  cloud_name = "property-homes", 
+  api_key = "717597927527748", 
+  api_secret = "GHd06DVPCEcoswHohzyslrouLiE" 
+)
+
+
+
+
+
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 

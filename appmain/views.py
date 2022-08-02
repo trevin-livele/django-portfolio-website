@@ -21,10 +21,7 @@ def portfolio(request):
     }
     return render(request, 'appmain/portfolio.html', context)
 
-
-
-def contact(request):
-    return render(request, 'appmain/contact.html')
+ 
 
 
 
